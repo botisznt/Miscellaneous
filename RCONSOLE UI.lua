@@ -1,3 +1,8 @@
+local Keys = {Enum.KeyCode.Up, Enum.KeyCode.Down, Enum.KeyCode.Left, Enum.KeyCode.Right}
+local ContextActionService = game:GetService("ContextActionService")
+
+ContextActionService:BindActionAtPriority("DisableArrowKeys", function() return Enum.ContextActionResult.Sink end, false, Enum.ContextActionPriority.High.Value, unpack(Keys))
+
 local function Count(tbl)
     local c = 0
     for i, v in pairs(tbl) do
