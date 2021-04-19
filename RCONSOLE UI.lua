@@ -82,7 +82,8 @@ local function Reset()
     wait()
 end
 
-print("Step: 5")
+print("Check")
+
 Reset()
 if n ~= 0 then
     local UIS = game:GetService("UserInputService")
