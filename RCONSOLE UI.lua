@@ -26,6 +26,13 @@ local options = {
         ["Min"] = -50,
         ["Max"] = 50
     },
+    ["FOV SIZE 2"] = {
+        ["VALUE"] = 50,
+        ["Type"] = "Slider",
+        ["Increment"] = 5,
+        ["Min"] = -50,
+        ["Max"] = 50
+    },
     ["FOV PART"] = {
         ["OPTIONS"] = {"Mouse", "Character"},
         ["Type"] = "Dropdown",
@@ -79,6 +86,10 @@ local function Reset()
                     rconsoleprint(x .. " ")
                 end
             end
+        elseif v["Type"] == "Slider" then
+            rconsoleprint('@@LIGHT_RED@@')
+            rconsoleprint("< "..v["VALUE"].." >")
+            rconsoleprint('@@WHITE@@')
         end
         if c == n then
             rconsoleprint('\n')
@@ -136,6 +147,30 @@ if n ~= 0 then
                             Reset()
                         end
                         break
+                    end
+                end
+            end
+            if input.KeyCode == Enum.KeyCode.Right then
+                local c1 = 0
+                for i, v in pairs(options) do
+                    c1 = c1 + 1
+                    if c1 == selected then
+                        if v["Type"] == "Slider" then
+                            v["VALUE"] = math.clamp(v["VALUE"] + v["Increment"], v["Min"], v["Max"])
+                            Reset()
+                        end
+                    end
+                end
+            end
+            if input.KeyCode == Enum.KeyCode.Left then
+                local c1 = 0
+                for i, v in pairs(options) do
+                    c1 = c1 + 1
+                    if c1 == selected then
+                        if v["Type"] == "Slider" then
+                            v["VALUE"] = math.clamp(v["VALUE"] - v["Increment"], v["Min"], v["Max"])
+                            Reset()
+                        end
                     end
                 end
             end
