@@ -11,6 +11,8 @@ local function Count(tbl)
     return c
 end
 
+local console_title = "Synapse X"
+
 local options = {
     ["AIMBOT"] = {
         ["ENABLED"] = false,
@@ -46,6 +48,7 @@ local selected = 1
 
 local function Reset()
     rconsoleclear()
+    rconsolename(console_title)
     rconsoleprint('@@LIGHT_RED@@')
     rconsoleprint('Welcome to RCONSOLE')
     rconsoleprint('@@WHITE@@')
