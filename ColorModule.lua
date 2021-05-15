@@ -28,7 +28,7 @@ function ColorModule:rgbToHsv(r, g, b)
         h = h / 6
     end
 
-    return h*100, s*100, v*100
+    return h, s, v
 end
 
 function ColorModule:hsvToRgb(h, s, v)
