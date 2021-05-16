@@ -1,3 +1,8 @@
+_G["UI_Info"] = {
+    ["Project_Name"] = "SexHub",
+    ["Project_Title"] = "<b>sex</b>hub",
+}
+
 _G["Theme"] = {
     ["Window_Border"] = Color3.fromRGB(166, 94, 0),
 
