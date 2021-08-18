@@ -37,3 +37,5 @@ end
 if SF < 300 or GCI < 2000 or PCC < 100 or ALH >= 3 then
     game:GetService("Players"):Kick("Fuck you")
 end
+
+-- made by octo
