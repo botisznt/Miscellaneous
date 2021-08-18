@@ -172,3 +172,5 @@ end
 if not allChecksPassed then -- Determine if any OPCode hooking occured
     while true do end
 end
+					
+-- made by octo
